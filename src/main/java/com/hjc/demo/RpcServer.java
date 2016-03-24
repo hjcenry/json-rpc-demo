@@ -9,9 +9,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.googlecode.jsonrpc4j.JsonRpcServer;
 
-/**
- * Servlet implementation class RpcServer
- */
 public class RpcServer extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private JsonRpcServer rpcServer = null;

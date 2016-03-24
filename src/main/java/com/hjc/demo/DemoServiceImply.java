@@ -1,6 +1,6 @@
 package com.hjc.demo;
 
-public class DemoServiceImply implements DemoService {
+public class DemoServiceImply {
 
 	public DemoBean getDemo(String code, String msg) {
 		DemoBean bean1 = new DemoBean();

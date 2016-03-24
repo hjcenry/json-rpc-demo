@@ -95,7 +95,11 @@
 			<artifactId>org.ow2.chameleon.fuchsia.base.json-rpc.json-rpc-bundle</artifactId>
 			<version>0.0.2</version>
 		</dependency>
-
+		<dependency>
+			<groupId>io.netty</groupId>
+			<artifactId>netty-all</artifactId>
+			<version>5.0.0.Alpha1</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>jsonrpc_server</finalName>

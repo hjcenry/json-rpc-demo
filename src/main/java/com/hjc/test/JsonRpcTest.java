@@ -1,13 +1,9 @@
 package com.hjc.test;
 
-import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
-import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.googlecode.jsonrpc4j.JsonRpcHttpClient;
 import com.hjc.demo.DemoBean;
 
@@ -21,13 +17,12 @@ public class JsonRpcTest {
 	public static void main(String[] args) throws Throwable {
 		// 实例化请求地址，注意服务端web.xml中地址的配置
 		try {
-			client = new JsonRpcHttpClient(new URL(
-					"http://127.0.0.1:8080/jsonrpc_server/rpc"));
+			client = new JsonRpcHttpClient(new URL("http://127.0.0.1:8400/"));
 			// 请求头中添加的信息
 			Map<String, String> headers = new HashMap<String, String>();
 			headers.put("UserKey", "hjckey");
 			// 添加到请求头中去
-			client.setHeaders(headers);
+			// client.setHeaders(headers);
 			JsonRpcTest test = new JsonRpcTest();
 			test.doSomething();
 			DemoBean demo = test.getDemo(1, "哈");
