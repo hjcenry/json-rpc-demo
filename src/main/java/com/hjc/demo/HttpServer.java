@@ -44,7 +44,8 @@ public class HttpServer {
 	}
 
 	public void initData() {
-		rpcServer = new JsonRpcServer(new DemoServiceImply(), DemoServiceImply.class);
+		rpcServer = new JsonRpcServer(new DemoServiceImply(),
+				DemoServiceImply.class);
 		// try {
 		// p = readProperties();
 		// port = Integer.parseInt(p.getProperty("port"));

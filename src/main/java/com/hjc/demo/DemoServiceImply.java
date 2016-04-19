@@ -2,6 +2,15 @@ package com.hjc.demo;
 
 public class DemoServiceImply {
 
+	public DemoBean getDemo2(DemoBean bean, String msg) {
+		DemoBean bean1 = new DemoBean();
+		System.out.println(bean.getCode());
+		System.out.println(bean.getMsg());
+		System.out.println(msg);
+		bean1 = bean;
+		return bean1;
+	}
+
 	public DemoBean getDemo(String code, String msg) {
 		DemoBean bean1 = new DemoBean();
 		bean1.setCode(Integer.parseInt(code));

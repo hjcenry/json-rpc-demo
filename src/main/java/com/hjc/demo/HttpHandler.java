@@ -26,7 +26,6 @@ public class HttpHandler extends SimpleChannelInboundHandler<FullHttpRequest> {
 	@Override
 	public void write(ChannelHandlerContext ctx, Object msg,
 			ChannelPromise promise) throws Exception {
-		System.out.println(msg);
 		super.write(ctx, msg, promise);
 	}
 

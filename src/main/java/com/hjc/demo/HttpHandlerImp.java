@@ -21,10 +21,14 @@ public class HttpHandlerImp {
 	public void channelRead(final ChannelHandlerContext ctx, final Object msg)
 			throws Exception {
 		DefaultFullHttpRequest req = (DefaultFullHttpRequest) msg;
-		HttpServer.rpcServer.handle(new ByteBufInputStream(req.content()),
-				new ByteBufOutputStream(req.content()));
-		writeJSON(ctx, HttpResponseStatus.OK, req.content());
-		ctx.flush();
+		String rpcType = req.headers().get("Rpc-Type");
+		if (rpcType != null && rpcType.equals("shop")) {
+			HttpServer.rpcServer.handle(new ByteBufInputStream(req.content()),
+					new ByteBufOutputStream(req.content()));
+			System.out.println(req.getMethod());
+			writeJSON(ctx, HttpResponseStatus.OK, req.content());
+			ctx.flush();
+		}
 	}
 
 	private static void writeJSON(ChannelHandlerContext ctx,
